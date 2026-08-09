@@ -52,7 +52,7 @@ export const personalInfo: PersonalInfo = {
   logoText: "KB",
   title: "Software Developer",
   roleSubtitle: "Software Developer focusing on robust backend systems and modern web architecture. Building scalable solutions with precision and performance in mind.",
-  status: "Immediate Available for Work",
+  status: "Available for Work",
   email: "karanbhoi2808@gmail.com",
   linkedIn: "https://www.linkedin.com/in/karanbhoi28",
   gitHub: "https://github.com/karanbhoi2808",
