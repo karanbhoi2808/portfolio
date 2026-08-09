@@ -1,0 +1,219 @@
+/* Welcome Screen Animation Styles */
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d0e0f;
+  color: #e3e2e2;
+  overflow: hidden;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform, opacity;
+}
+
+.welcome-screen.fade-out {
+  transform: translateY(-100%);
+  opacity: 0.95;
+}
+
+/* Glow & Grid background elements */
+.welcome-glow-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(78, 222, 163, 0.05) 50%, rgba(13, 14, 15, 0) 70%);
+  filter: blur(50px);
+  animation: welcomePulse 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.welcome-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+@keyframes welcomePulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Center Content Stack */
+.welcome-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px;
+  max-width: 440px;
+  width: 100%;
+}
+
+/* KB Logo Badge & Rotating Rings */
+.welcome-logo-wrapper {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.welcome-ring-outer {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #6FFBBE;
+  border-right-color: #10B981;
+  animation: spinRing 2s linear infinite;
+}
+
+.welcome-ring-inner {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px dashed rgba(78, 222, 163, 0.3);
+  animation: reverseSpinRing 6s linear infinite;
+}
+
+@keyframes spinRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes reverseSpinRing {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.welcome-logo-text {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(18, 19, 20, 0.9);
+  border: 1px solid rgba(78, 222, 163, 0.4);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.25), inset 0 0 15px rgba(16, 185, 129, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-headline, 'Space Grotesk', sans-serif);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #6FFBBE 0%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoBadgePop 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes logoBadgePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Text Group Animation */
+.welcome-text-group {
+  margin-bottom: 36px;
+  animation: welcomeFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.welcome-title {
+  font-family: var(--font-headline, 'Space Grotesk', sans-serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.welcome-name {
+  background: linear-gradient(135deg, #FFFFFF 0%, #BBCABF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-subtitle {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 13px;
+  font-weight: 500;
+  color: #4EDEA3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@keyframes welcomeFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress bar & Counter */
+.welcome-progress-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: welcomeFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.welcome-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(52, 53, 53, 0.4);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.welcome-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10B981, #6FFBBE);
+  border-radius: 999px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+}
+
+.welcome-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: #86948A;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.counter-val {
+  color: #4EDEA3;
+  font-weight: 600;
+}
