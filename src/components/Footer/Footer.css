@@ -1,0 +1,170 @@
+/* Footer / Contact v3 Styles */
+.footer-wrapper {
+  background-color: var(--color-surface-card);
+  border-top: 1px solid var(--color-outline-translucent);
+  width: 100%;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.footer-top-row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-bottom: 1px solid var(--color-outline-translucent);
+  padding-bottom: 48px;
+}
+
+@media (min-width: 1024px) {
+  .footer-top-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-connect-text {
+  max-width: 500px;
+}
+
+.footer-connect-title {
+  font-family: var(--font-headline);
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin-bottom: 8px;
+}
+
+.footer-connect-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-on-surface-variant);
+}
+
+/* Connect Action Buttons Group */
+.contact-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.connect-btn {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-radius: var(--radius-default);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.connect-btn .material-symbols-outlined {
+  font-size: 18px !important;
+}
+
+/* Primary Accent Email Button */
+.connect-btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.connect-btn-primary:hover {
+  background-color: var(--color-primary-fixed);
+  border-color: var(--color-primary-fixed);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 222, 163, 0.25);
+}
+
+/* Secondary Surface Outline Buttons */
+.connect-btn-secondary {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-translucent);
+}
+
+.connect-btn-secondary:hover {
+  background-color: var(--color-surface-high);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-bar {
+    flex-direction: row;
+  }
+}
+
+.footer-brand-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo-kb {
+  font-family: var(--font-headline);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+.footer-location-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: var(--color-on-surface-variant);
+}
+
+@media (max-width: 767px) {
+  .footer-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .footer-connect-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .contact-buttons-group {
+    width: 100%;
+  }
+  .connect-btn {
+    flex: 1 1 calc(50% - 6px);
+    justify-content: center;
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+}

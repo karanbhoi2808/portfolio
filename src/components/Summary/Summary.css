@@ -1,0 +1,100 @@
+/* Summary / Hero v3 Styles */
+.summary-hero-section {
+  padding-top: 140px;
+  margin-bottom: var(--spacing-section-gap);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-gutter);
+}
+
+.summary-content {
+  grid-column: span 10;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.status-badge-v3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border: 1px solid var(--color-outline-variant);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  width: max-content;
+}
+
+.pulse-dot-v3 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.summary-headline-v3 {
+  font-family: var(--font-headline);
+  font-size: 80px;
+  line-height: 88px;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  max-width: 900px;
+}
+
+.summary-headline-muted {
+  color: var(--color-on-surface-variant);
+}
+
+.summary-paragraph-v3 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--color-on-surface-variant);
+  max-width: 672px;
+  border-left: 2px solid var(--color-outline-translucent);
+  padding-left: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 1023px) {
+  .summary-content {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 767px) {
+  .summary-hero-section {
+    padding-top: 110px;
+    margin-bottom: 64px;
+  }
+  .summary-headline-v3 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+  }
+  .summary-paragraph-v3 {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 16px;
+  }
+  .br-desktop {
+    display: none;
+  }
+}

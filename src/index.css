@@ -1,0 +1,246 @@
+/* Personal Portfolio v3 - Design System & Themes */
+
+/* Default Dark Theme & Fallback */
+:root,
+html.dark {
+  --color-bg: #121314;
+  --color-surface: #121314;
+  --color-surface-card: #0D0E0F;
+  --color-surface-low: #1B1C1C;
+  --color-surface-container: #1F2020;
+  --color-surface-high: #292A2A;
+  --color-surface-highest: #343535;
+
+  --color-primary: #4EDEA3;
+  --color-primary-container: #10B981;
+  --color-on-primary: #003824;
+  --color-primary-fixed: #6FFBBE;
+
+  --color-on-surface: #E3E2E2;
+  --color-on-surface-variant: #BBCABF;
+  --color-outline: #86948A;
+  --color-outline-variant: #3C4A42;
+  --color-outline-translucent: rgba(60, 74, 66, 0.3);
+
+  --glass-header-bg: rgba(18, 19, 20, 0.75);
+  --card-header-bg: #121314;
+  --card-border-color: #1F1F1F;
+  --badge-bg: rgba(52, 53, 53, 0.3);
+  --scrollbar-track: #000000;
+  --scrollbar-thumb: #1F1F1F;
+
+  /* Typography */
+  --font-headline: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --spacing-unit: 8px;
+  --spacing-gutter: 32px;
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-mobile: 24px;
+  --spacing-section-gap: 160px;
+  --container-max: 1440px;
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-default: 0.25rem;
+  /* 4px */
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  /* 8px */
+  --radius-xl: 0.75rem;
+  /* 12px */
+  --radius-full: 9999px;
+}
+
+/* Light Theme Overrides */
+html.light {
+  --color-bg: #F8FAFC;
+  --color-surface: #F8FAFC;
+  --color-surface-card: #FFFFFF;
+  --color-surface-low: #F1F5F9;
+  --color-surface-container: #E2E8F0;
+  --color-surface-high: #CBD5E1;
+  --color-surface-highest: #94A3B8;
+
+  --color-primary: #059669;
+  --color-primary-container: #10B981;
+  --color-on-primary: #FFFFFF;
+  --color-primary-fixed: #047857;
+
+  --color-on-surface: #0F172A;
+  --color-on-surface-variant: #475569;
+  --color-outline: #64748B;
+  --color-outline-variant: #E2E8F0;
+  --color-outline-translucent: rgba(226, 232, 240, 0.8);
+
+  --glass-header-bg: rgba(255, 255, 255, 0.85);
+  --card-header-bg: #F8FAFC;
+  --card-border-color: #E2E8F0;
+  --badge-bg: #F1F5F9;
+  --scrollbar-track: #F8FAFC;
+  --scrollbar-thumb: #CBD5E1;
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 100px;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-highest);
+}
+
+/* Layout Container */
+.container-max {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-margin-desktop);
+  padding-right: var(--spacing-margin-desktop);
+}
+
+@media (max-width: 767px) {
+  .container-max {
+    padding-left: var(--spacing-margin-mobile);
+    padding-right: var(--spacing-margin-mobile);
+  }
+}
+
+/* Typography Utility Classes */
+.font-headline {
+  font-family: var(--font-headline);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.label-caps {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.label-code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+/* Material Symbols Helper */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Button & Link Styles (v3) */
+.btn-resume {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 8px 16px;
+  border-radius: var(--radius-default);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-resume:hover {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.btn-theme-toggle {
+  padding: 8px;
+  border-radius: var(--radius-default);
+  border: 1px solid var(--color-outline-translucent);
+  background: transparent;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-theme-toggle:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Chip Badge */
+.chip {
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}

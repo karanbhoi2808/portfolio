@@ -1,0 +1,91 @@
+/* Hero Section CSS */
+.hero-section {
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  margin-bottom: var(--spacing-section-gap);
+}
+
+.hero-glow-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+}
+
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border: 1px solid var(--color-outline-variant);
+  background-color: rgba(16, 185, 129, 0.05);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-headline);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-on-surface);
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-headline);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+}
+
+.hero-contact-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-on-surface-variant);
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hero-contact-link:hover {
+  color: var(--color-primary);
+}
+
+.hero-separator {
+  color: var(--color-outline);
+  user-select: none;
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    padding-top: 100px;
+    margin-bottom: 64px;
+  }
+  .hero-title {
+    font-size: 40px;
+  }
+  .hero-subtitle {
+    font-size: 24px;
+  }
+}
